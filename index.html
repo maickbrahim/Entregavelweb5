@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini Projeto — APIs e DOM</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 720px; margin: 24px auto; padding: 0 16px; color: #222; }
+    section { border: 1px solid #ddd; border-radius: 8px; padding: 16px; margin-bottom: 24px; }
+    h1 { text-align: center; }
+    h2 { margin-top: 0; }
+    form { display: flex; gap: 8px; margin-bottom: 8px; }
+    input { flex: 1; padding: 8px; }
+    button { padding: 8px 16px; cursor: pointer; }
+    button:disabled { cursor: not-allowed; opacity: .6; }
+    .status { min-height: 1.4em; font-weight: bold; }
+    .status.erro { color: #b00020; }
+    .status.carregando { color: #555; }
+    dt { font-weight: bold; margin-top: 8px; }
+    dd { margin: 0 0 0 16px; }
+    #pokemon-resultado img { width: 120px; height: 120px; image-rendering: pixelated; }
+    #pokemon-resultado h3 { text-transform: capitalize; margin: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>Mini Projeto: APIs e DOM</h1>
+
+  <!-- PARTE 1 -->
+  <section id="parte1">
+    <h2>Parte 1 — Pedidos</h2>
+    <p><strong>Total faturado (pedidos pagos e válidos):</strong> <span id="total-faturado"></span></p>
+    <ul id="lista-pedidos"></ul>
+  </section>
+
+  <!-- PARTE 2 -->
+  <section id="parte2">
+    <h2>Parte 2 — Buscador de CEP</h2>
+    <form id="form-cep">
+      <input type="text" id="cep" placeholder="Digite o CEP (8 números)" autocomplete="off">
+      <button type="submit" id="btn-cep">Buscar</button>
+    </form>
+    <p id="status-cep" class="status" role="status" aria-live="polite"></p>
+    <dl id="resultado-cep"></dl>
+
+    <h3>Histórico de CEPs</h3>
+    <ul id="historico-cep"></ul>
+  </section>
+
+  <!-- PARTE 3 -->
+  <section id="parte3">
+    <h2>Parte 3 — Mini Pokédex</h2>
+    <form id="form-pokemon">
+      <input type="text" id="pokemon" placeholder="Nome do Pokémon (ex: pikachu)" autocomplete="off">
+      <button type="submit" id="btn-pokemon">Buscar</button>
+    </form>
+    <p id="status-pokemon" class="status" role="status" aria-live="polite"></p>
+    <div id="pokemon-resultado"></div>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
